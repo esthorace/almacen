@@ -14,13 +14,10 @@ class Producto(models.Model):
     precio = models.FloatField()
 
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre} ${self.precio:.2f}"
 
 
 class Venta(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.RESTRICT)
     producto = models.ForeignKey(Producto, on_delete=models.RESTRICT)
     fecha = models.DateField()
-
-    def __str__(self):
-        return f"{self.fecha:%d/%m/%Y} - {self.cliente} ({self.producto.nombre}: ${self.producto.precio:.2f})"

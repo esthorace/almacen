@@ -28,7 +28,7 @@ class ProductoAdmin(admin.ModelAdmin):
 
 class VentaAdmin(admin.ModelAdmin):
     model = Venta
-    list_display = ("cliente", "producto", "fecha")
+    list_display = ("id", "cliente", "producto", "fecha")
     date_hierarchy = "fecha"
 
 
